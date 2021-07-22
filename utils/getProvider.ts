@@ -8,10 +8,11 @@ export const getProvider = (chainId: number) => {
             break;
         case 137:
             provider = new ethers.providers.JsonRpcProvider(process.env.POLY_RPC_URL)
-            break
+            break;
         default:
             console.error(`Unsupported chainId: ${chainId}`)
     }
+    return provider
 }
 
 export default getProvider
